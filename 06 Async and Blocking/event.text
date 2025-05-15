@@ -1,0 +1,42 @@
+Node.js uses an event loop to manage asynchronous operations. 
+The loop runs through several phases, each responsible for handling a specific type of callback or operation.
+
+these phases in order:
+
+1. timers
+2. pending callbacks
+3. idle, prepare
+4. poll
+5. check
+6. close 
+
+Timers Phase
+Executes callbacks scheduled by setTimeout() and setInterval().
+If you schedule a function to run “after 100 ms,” it is queued here when the timer is ready.
+
+Pending Callbacks Phase
+Executes I/O callbacks that were deferred to the next loop iteration.
+For example, some system-level operations or certain callbacks from the previous iteration might be placed here to run later.
+
+Idle, Prepare
+These are internal phases used by Node.js for its own internal operations. They are not typically used by user code.
+You rarely interact with these phases directly.
+
+Poll Phase
+The poll phase is where Node.js retrieves new I/O events (e.g., network requests, file I/O).
+It executes almost all I/O-related callbacks here, except for:
+Close callbacks
+Timers
+setImmediate() callbacks
+If the event loop has nothing else to process, Node.js may block (wait) in this phase for new I/O events.
+
+Check Phase
+This phase is dedicated to callbacks scheduled by setImmediate().
+Any functions passed to setImmediate() will be invoked in this check phase.
+
+Close Callbacks Phase
+Executes callbacks related to closing resources (e.g., socket.on('close', ...)).
+This is the final phase where “cleanup” operations happen before the loop goes back to the beginning.
+
+
+
