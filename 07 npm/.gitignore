@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+
+# Debug logs
+npm-debug.log*
+
+# Environment variables
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache 
