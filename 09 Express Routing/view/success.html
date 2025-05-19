@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/success.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Thank You for Submitting! 🎉</h1>
+        <div class="info-box">
+            <p><strong>Name:</strong> <span id="userName"></span></p>
+            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        </div>
+        <a href="/" class="btn">🏠 Go to Home</a>
+    </div>
+    <script>
+        fetch('/host/success-data')
+          .then(response => response.json())
+          .then(data => {
+              document.getElementById("userName").textContent = data.name;
+              document.getElementById("userEmail").textContent = data.email;
+          });
+    </script>
+    
+</body>
+</html>
