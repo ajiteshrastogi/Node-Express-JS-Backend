@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variables (for MongoDB connection strings)
+.env
+.env.local
+config.js
+config.json
+
+# MongoDB
+*.mongodb
+mongodb.config
+mongod.conf
+mongodb.log
+mongod.log
+.mongodb/
+
+# Mongoose debug
+mongoose-debug.log
+mongoose.log
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Temporary data files
+data/*.json
+data/temp/
+*.temp
+*.tmp
+
+# Debug files
+nodemon-debug.log
+
+# Local MongoDB data
+data/db/
+.data/
+dump/
+backup/ 
