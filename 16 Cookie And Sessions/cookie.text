@@ -1,0 +1,43 @@
+COOKIE AND SESSIONS
+
+cookie are small pieces of data stored in the user's browser by the web server
+they help the web server to remember the user's data and preferences between page loads and visits
+server is stateless, it does not remember the user's data and preferences between page loads and visits
+server does not know that how many times the user has visited the website, if the user is new or old 
+for eg. if a user login to the website, and again visited the website , the website directly show the home page 
+it says that the user is already logged in, and it does not ask for the login again
+this is possible because of the cookie
+it tells the server that the user is already logged in, and it does not ask for the login again
+they are used to store user's data, user's session, user's preferences
+
+cookie can intercepted or stolen, posing a security risk
+they have limited storage capacity
+user can delete or modify cookies, leading to data loss and tampering
+data in cookies can be accessed by javascript, posing a security risk
+data in cookies is not encrypted, so it can be read by anyone
+storing the important data in cookies expose it to client side attack
+
+to avoid these security risks, we can use the following techniques
+use http only cookies, which cannot be accessed by javascript
+use secure cookies, which can only be sent over https
+use signed cookies, which cannot be modified without being detected
+use encrypted cookies, which cannot be read by anyone
+
+or mainly use the session and session storage
+
+session are server side storage mechanism that track user interaction on the server
+they maintain user state and data across multiple page requests
+they are managed on the server side and provide a more secure alternative to cookies
+it enables persistent user experience by maintaining user state between the client and server over stateless http protocol
+
+for installing the session we need to install the express-session middleware
+npm install express-session`
+
+also we need to install the connect-mongodb-session middleware
+for storing the session in the mongodb
+as we can store the session in the memory, but it is not a good practice
+because if the server restart, the session will be lost
+so we need to store the session in the mongodb
+npm install connect-mongodb-session
+ 
+
